@@ -1,1 +1,4 @@
-import "./styles/style.css";
+import MenuController
+    from "./menuController";
+ 
+MenuController();

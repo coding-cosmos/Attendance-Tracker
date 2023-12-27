@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starter</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracker</title>
+    <link rel="stylesheet" href="../src/styles/style.css">
+  </head>
+  <body>
     <div class="container">
       <div class="header">
-        <div class="logo">Tracker</div>
+        <div id="logo">Tracker</div>
+        <div id="menu-icon">
+          <img src="../src/icons/menu.svg" alt="" srcset="">
+        </div>
       </div>
-
-      <div class="main">This is main</div>
-
-      <div class="nav">
-        <div id="today" class="nav-item active">Today</div>
-        <div id="report" class="nav-item">Report</div>
-        <div id="schedule" class="nav-item">Schedule</div>
+      <div id="menu"  >
+        <div class="page active" id="home">
+          <div class="icon"><img src="" alt="" srcset=""></div>
+          <div class="name">Home</div>
+        </div>
+        <div class="page" id="subjects">
+          <div class="icon"><img src="" alt="" srcset=""></div>
+          <div class="name">Subjects</div>
+        </div>
+        <div class="page" id="schedule">
+          <div class="icon"><img src="" alt="" srcset=""></div>
+          <div class="name">Schedule</div>
+        </div>
+        <div class="page" id="extraclass">
+          <div class="icon"><img src="" alt=""></div>
+          <div class="name">Extra Class</div>
+        </div>
       </div>
+      
     </div>
-</body>
+  </body>
 </html>
