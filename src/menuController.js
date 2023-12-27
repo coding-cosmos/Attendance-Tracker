@@ -6,14 +6,23 @@ const iconImg = document.querySelector("#menu-icon>img");
 const menu = document.querySelector("#menu");
 const pages = menu.querySelectorAll(".page");
 
+
+const outSideClick = (e) => {
+  if (!menu.contains(e.target) && !iconImg.contains(e.target)) {
+    closeMenu();
+  }
+};
+
 function openMenu() {
   iconImg.src = close;
   menu.classList = "slide-forwards";
+   document.addEventListener("click",outSideClick);
 }
 
 function closeMenu() {
   iconImg.src = hamburger;
   menu.classList = "slide-backwards";
+  document.removeEventListener('click', outSideClick);
 }
 
 function activePageController() {
