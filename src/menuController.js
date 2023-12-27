@@ -1,10 +1,11 @@
 import hamburger from "./icons/menu.svg";
 import close from "./icons/cross.svg";
 import Icons from "./icons";
+import MainController from "./mainController";
 
 const iconImg = document.querySelector("#menu-icon>img");
 const menu = document.querySelector("#menu");
-const pages = menu.querySelectorAll(".page");
+const pages = menu.querySelectorAll(".pageTab");
 
 
 const outSideClick = (e) => {
@@ -29,6 +30,8 @@ function activePageController() {
   pages.forEach((page) => {
     page.addEventListener("click", () => {
       setActive(page);
+      console.log(page.id);
+      MainController.render(page.id);
       closeMenu();
     });
   });
@@ -36,9 +39,9 @@ function activePageController() {
 
 function setActive(page) {
    pages.forEach((page) => {
-     page.classList = "page";
+     page.classList = "pageTab";
    });
-   page.classList = "page active";
+   page.classList = "pageTab active";
 }
 
 function menuIconController() {
