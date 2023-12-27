@@ -4,38 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tracker</title>
-    <link rel="stylesheet" href="../src/styles/style.css">
   </head>
   <body>
     <div class="container">
       <div class="header">
         <div id="logo">Tracker</div>
         <div id="menu-icon">
-          <img src="../src/icons/menu.svg" alt="" srcset="">
+          <img src="../src/icons/menu.svg" alt="" srcset="" />
         </div>
       </div>
-      <div id="menu"  >
-        <div class="page active" id="home">
-          <div class="icon"><img src="" alt="" srcset=""></div>
+      <div id="menu">
+        <div class="pageTab active" id="home">
+          <div class="icon"><img src="" alt="" srcset="" /></div>
           <div class="name">Home</div>
         </div>
-        <div class="page" id="subjects">
-          <div class="icon"><img src="" alt="" srcset=""></div>
+        <div class="pageTab" id="subjects">
+          <div class="icon"><img src="" alt="" srcset="" /></div>
           <div class="name">Subjects</div>
         </div>
-        <div class="page" id="schedule">
-          <div class="icon"><img src="" alt="" srcset=""></div>
+        <div class="pageTab" id="schedule">
+          <div class="icon"><img src="" alt="" srcset="" /></div>
           <div class="name">Schedule</div>
         </div>
-        <div class="page" id="extraclass">
-          <div class="icon"><img src="" alt=""></div>
+        <div class="pageTab" id="extraclass">
+          <div class="icon"><img src="" alt="" /></div>
           <div class="name">Extra Class</div>
         </div>
       </div>
       <div id="main">
-         <div id="starter">
-            <button>Get Started!</button>
-         </div>
+        <div id="starter" class="page">
+          <button>Get Started!</button>
+        </div>
+
+        <div id="subjects-page" class="page">
+          <div class="sub-pg-wrapper">
+            <form action="" class="add">
+              <input type="text" class="  " id="subject-name" placeholder="Enter the subject name" />
+              <button type="submit">Add</button>
+            </form>
+        
+            <div class="subject-list">
+              <p>"Add subjects to get started"</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="home-page" class="page">home</div>
+        <div id="schedule-page" class="page">Schedule</div>
+        <div id="extraclass-page" class="page">Extra class</div>
       </div>
     </div>
   </body>
