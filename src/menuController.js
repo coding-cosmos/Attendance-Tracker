@@ -17,7 +17,6 @@ function closeMenu() {
 }
 
 function activePageController() {
-  
   pages.forEach((page) => {
     page.addEventListener("click", () => {
       pages.forEach((page) => {
@@ -41,7 +40,6 @@ function menuIconController() {
 
 function setPageIcons() {
   pages.forEach((page, index) => {
-    console.log(page.querySelector('.icon>img'));
     page.querySelector('.icon>img').src = Icons[index];
   });
 }
@@ -50,7 +48,6 @@ function MenuController() {
   setPageIcons();
   menuIconController();
   activePageController();
-
 }
 
 export default MenuController;
