@@ -19,13 +19,17 @@ function closeMenu() {
 function activePageController() {
   pages.forEach((page) => {
     page.addEventListener("click", () => {
-      pages.forEach((page) => {
-        page.classList = "page";
-      });
-      page.classList = "page active";
+      setActive(page);
       closeMenu();
     });
   });
+}
+
+function setActive(page) {
+   pages.forEach((page) => {
+     page.classList = "page";
+   });
+   page.classList = "page active";
 }
 
 function menuIconController() {
@@ -50,4 +54,4 @@ function MenuController() {
   activePageController();
 }
 
-export default MenuController;
+export { MenuController, setActive };
