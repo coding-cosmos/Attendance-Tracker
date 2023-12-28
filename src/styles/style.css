@@ -295,12 +295,6 @@
     padding: 12px;
 }
 
-/* #schedule-page .item {
-    width: 100px;
-    height: 24px;
-    border: 2px solid black;
-    border-radius: 4px;
-} */
 dialog {
     margin: auto;
     border: none;
@@ -314,7 +308,7 @@ dialog::backdrop {
 
 .dialog {
     display: grid;
-    grid-template-rows: 48px 1fr 36px;
+    grid-template-rows: fit-content 1fr 36px;
     gap: 16px;
     padding: 8px;
     margin: 8px;
@@ -326,12 +320,13 @@ dialog::backdrop {
 
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 16px;
 
     width: 80%;
-    min-height: 8pc;
     border: 1px solid var(--bg-clr-primary);
     border-radius: 24px;
+    padding: 6px;
 }
 
 .dialog button {
