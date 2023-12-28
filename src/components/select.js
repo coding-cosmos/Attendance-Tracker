@@ -12,6 +12,7 @@ function Select() {
   nameDiv.innerText = "Subjects";
   const icon = document.createElement("img");
   icon.src = down;
+
   const optionsWrapper = document.createElement("div");
   optionsWrapper.classList = "options-wrapper";
   const options = document.createElement("div");
@@ -20,7 +21,7 @@ function Select() {
   const dropDown = () => {
     icon.src = icon.src == up ? down : up;
     optionsWrapper.classList =
-      icon.src == up ? "options-wrapper" : "options-wrapper dropdown-select";
+      (icon.src == down) ? "options-wrapper" : "options-wrapper dropdown-select";
   };
 
   icon.addEventListener("click", dropDown);
