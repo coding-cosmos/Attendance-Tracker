@@ -5,6 +5,17 @@ function Data() {
       localStorage.setItem("id", JSON.stringify(0));
       
       localStorage.setItem('newUser', JSON.stringify(true));
+
+      localStorage.setItem(
+        "schedule",
+        JSON.stringify([
+          { day: "mon", subjects: [] },
+          { day: "tue", subjects: [] },
+          { day: "fri", subjects: [] },
+          { day: "wed", subjects: [] },
+          { day: "thr", subjects: [] },
+        ])
+      );
   }
 }
 
