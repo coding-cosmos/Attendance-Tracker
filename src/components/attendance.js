@@ -26,7 +26,16 @@ function Attendance(name,status) {
      e.target.src == up ? close(div) : open(div);
   });
 
-
+  const options = div.querySelectorAll(".selector-option");
+  const value = div.querySelector(".value");
+  options.forEach((option) =>
+    option.addEventListener("click", () => {
+      value.innerText = option.innerText;
+      console.log(option.innerText);
+      close(div);
+    })
+  );
+  
   return div;
 }
 
