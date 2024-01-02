@@ -98,6 +98,7 @@ function modalController() {
 
 function getSubjectOptions() {
   const subjects = SubjectData.getSubjects();
+  subjectOptionsList.splice(0, subjectOptionsList.length);
   if (subjects.length != 0) { 
     subjects.forEach((subject) => {
       const option = document.createElement("div");
@@ -147,7 +148,7 @@ function showModalController(day) {
 
 function rederOptions() {
   const optionsContainer = dialogModal.querySelector(".options");
-
+  optionsContainer.innerText = '';
   subjectOptionsList.forEach((option) => {
     optionsContainer.append(option);
   });
