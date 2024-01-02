@@ -110,7 +110,26 @@ function getSubjectOptions() {
         const option = e.target;
 
         const id = option.getAttribute("data-ID");
-        list.appendChild(SubjectTile(option.innerText, id));
+        const day =
+          e.target.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute(
+            "data-day"
+          );
+
+        console.log(day);
+         const storedSubjects = [];
+         ScheduleData.getDaySchedule(day).forEach((subject) =>
+           storedSubjects.push(subject.name)
+         );
+
+        if (!storedSubjects.includes(option.innerText)) {
+          list.style.color = "black";
+          list.innerText = "";
+          list.appendChild(SubjectTile(option.innerText, id));
+        } else {
+          list.style.color = 'red';
+          list.innerText = 'already selected';
+        }
+      
       });
 
       subjectOptionsList.push(option);
