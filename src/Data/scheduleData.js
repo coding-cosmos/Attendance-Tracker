@@ -4,7 +4,6 @@ class ScheduleData {
   static getSchedule() {
     const schedule = JSON.parse(localStorage.getItem("schedule"));
 
-    console.log(schedule);
     return schedule
       ? schedule
       : [
