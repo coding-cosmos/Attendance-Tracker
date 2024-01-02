@@ -2,14 +2,14 @@ import down from "../icons/downV2.svg";
 import up from "../icons/upV2.svg";
 import "../styles/attendance.css";
 
-function Attendance(name) {
+function Attendance(name,status) {
   const div = document.createElement("div");
   div.className = "sub";
   div.innerHTML = `
                 <div class="sub-name">${name}</div>
                 <div class="selector-wrapper">
                     <div class="selector">
-                     <div class="value">Select</div>           
+                     <div class="value">${status}</div>           
                       <img src="${down}" alt="" srcset="" >
                     </div>
                     <div class="selector-options-wrapper ">
@@ -23,19 +23,28 @@ function Attendance(name) {
                 </div>
               `;
   div.querySelector(".selector>img").addEventListener("click", (e) => {
-    e.target.src = e.target.src == up ? down : up;
-    const options = div.querySelector(".selector-options-wrapper");
-
-    options.classList =
-      e.target.src == up
-        ? "selector-options-wrapper selector-dropdown"
-        : "selector-options-wrapper";
-
-    const selector = div.querySelector(".selector");
-    selector.style.zIndex = e.target.src == up ? 3 : 1;
+     e.target.src == up ? close(div) : open(div);
   });
+
 
   return div;
 }
+
+function close(div) {
+  const optionsWrapper = div.querySelector(".selector-options-wrapper");
+  optionsWrapper.classList = "selector-options-wrapper";
+  div.querySelector(".selector>img").src = down;
+}
+
+function open(div) {
+  const optionsWrapper = div.querySelector(".selector-options-wrapper");
+  optionsWrapper.classList = "selector-options-wrapper selector-dropdown";
+  const img = div.querySelector(".selector>img");
+  img.src = up;
+
+    const selector = div.querySelector(".selector");
+    selector.style.zIndex = img.src == up ? 3 : 1;
+}
+
 
 export default Attendance;
