@@ -11,9 +11,9 @@ function Data() {
         JSON.stringify([
           { day: "mon", subjects: [] },
           { day: "tue", subjects: [] },
-          { day: "fri", subjects: [] },
           { day: "wed", subjects: [] },
-          { day: "thr", subjects: [] },
+          { day: "thu", subjects: [] },
+          { day: "fri", subjects: [] },
         ])
       );
   }
