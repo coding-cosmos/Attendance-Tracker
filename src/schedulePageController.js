@@ -74,7 +74,8 @@ function modalController() {
 
      modalSubmitBtn.addEventListener("click", (e) => {
        const day =
-         e.target.parentElement.parentElement.getAttribute("data-day");
+         e.target.parentElement.parentElement.parentElement.getAttribute("data-day");
+      
        modalSubmitController(day);
      });
     
