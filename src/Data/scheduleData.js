@@ -4,7 +4,16 @@ class ScheduleData {
   static getSchedule() {
     const schedule = JSON.parse(localStorage.getItem("schedule"));
 
-    return schedule ? schedule : [];
+    console.log(schedule);
+    return schedule
+      ? schedule
+      : [
+          { day: "mon", subjects: [] },
+          { day: "tue", subjects: [] },
+          { day: "wed", subjects: [] },
+          { day: "thu", subjects: [] },
+          { day: "fri", subjects: [] },
+        ];
   }
 
   static removeSubject(day, id) {
