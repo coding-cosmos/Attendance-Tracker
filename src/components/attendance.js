@@ -42,17 +42,23 @@ function Attendance(name,status) {
 function close(div) {
   const optionsWrapper = div.querySelector(".selector-options-wrapper");
   optionsWrapper.classList = "selector-options-wrapper";
-  div.querySelector(".selector>img").src = down;
+
+  const img = div.querySelector(".selector>img");
+  img.src = down;
+
+  const selector = div.querySelector(".selector");
+  selector.style.zIndex = img.src == up ? 3 : 1;
 }
 
 function open(div) {
   const optionsWrapper = div.querySelector(".selector-options-wrapper");
   optionsWrapper.classList = "selector-options-wrapper selector-dropdown";
+
   const img = div.querySelector(".selector>img");
   img.src = up;
-
-    const selector = div.querySelector(".selector");
-    selector.style.zIndex = img.src == up ? 3 : 1;
+  
+  const selector = div.querySelector(".selector");
+  selector.style.zIndex = img.src == up ? 3 : 1;
 }
 
 
