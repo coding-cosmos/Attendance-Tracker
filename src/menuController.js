@@ -27,6 +27,9 @@ function closeMenu() {
 }
 
 function activePageController() {
+  if (!JSON.parse(localStorage.getItem('newUser'))) {
+    MainController.render('home');
+  }
   pages.forEach((page) => {
     page.addEventListener("click", () => {
       setActive(page);
