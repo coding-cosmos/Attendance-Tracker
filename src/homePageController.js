@@ -21,7 +21,7 @@ function renderSubjects() {
     const subjects = ScheduleData.getDaySchedule(getDay());
     subjectsWrapper.innerHTML = '';
     subjects.forEach(subject => {
-        subjectsWrapper.appendChild(Attendance(subject.name));
+        subjectsWrapper.appendChild(Attendance(subject.name,'Select'));
     });
 }
 
