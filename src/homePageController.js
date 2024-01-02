@@ -1,13 +1,28 @@
+import {getDate,getDay} from "./Data/date";
+import ScheduleData from "./Data/scheduleData";
 import Attendance from "./components/attendance";
 
 const subjectsWrapper = document.querySelector('.subjects-wrapper');
+const homePage = document.querySelector('#home-page');
 
 function HomePageController() {
-    console.log(subjectsWrapper);
+    dateController();
+    renderSubjects();
+}
+
+function dateController() {
+    const day = homePage.querySelector('#day');
+    const date = homePage.querySelector('#date');
+    day.innerText = getDay();
+    date.innerText = getDate();
+}
+
+function renderSubjects() {
+    const subjects = ScheduleData.getDaySchedule(getDay());
     
-    subjectsWrapper.appendChild(Attendance("ML"));
-    subjectsWrapper.appendChild(Attendance("DSS"));
-    subjectsWrapper.appendChild(Attendance("AI"));
+    subjects.forEach(subject => {
+        subjectsWrapper.appendChild(Attendance(subject.name));
+    });
 }
 
 export default HomePageController;
