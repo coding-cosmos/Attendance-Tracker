@@ -51,6 +51,13 @@ class ScheduleData {
   static updateLocalStorage() {
     localStorage.setItem("schedule", JSON.stringify(ScheduleData.schedule));
   }
+
+  static getDaySchedule(day) {
+    const daySchedule = ScheduleData.schedule.find(
+      (schedule) => schedule.day == day.toLowerCase()
+    );
+    return daySchedule?.subjects;
+  }
 }
 
 export default ScheduleData;
