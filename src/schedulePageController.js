@@ -60,27 +60,44 @@ function addSubjectController() {
 }
 
 function modalController() {
-  dialogModalContainer.appendChild(Select());
+  if (dialogModalContainer.innerHTML == "") {
+     dialogModalContainer.appendChild(Select());
 
-  const list = document.createElement("div");
-  list.className = "list";
+     const list = document.createElement("div");
+    list.className = "list";
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'btn-container';
 
-  const modalSubmitBtn = document.createElement("button");
-  modalSubmitBtn.classList = "submit-btn";
-  modalSubmitBtn.innerText = "Done";
+     const modalSubmitBtn = document.createElement("button");
+     modalSubmitBtn.classList = "submit-btn";
+     modalSubmitBtn.innerText = "Done";
 
-  modalSubmitBtn.addEventListener("click", (e) => {
-    const day = e.target.parentElement.parentElement.getAttribute("data-day");
-    modalSubmitController(day);
-  });
+     modalSubmitBtn.addEventListener("click", (e) => {
+       const day =
+         e.target.parentElement.parentElement.getAttribute("data-day");
+       modalSubmitController(day);
+     });
+    
+    
+    const modalCancelBtn = document.createElement("button");
+    modalCancelBtn.classList = "cancel-btn";
+    modalCancelBtn.innerText = "Cancel";
 
-  dialogModalContainer.appendChild(list);
-  dialogModalContainer.appendChild(modalSubmitBtn);
+    modalCancelBtn.addEventListener('click', () => {
+      dialogModal.close();
+    })
+
+    buttonContainer.appendChild(modalCancelBtn);
+    buttonContainer.appendChild(modalSubmitBtn);
+
+    dialogModalContainer.appendChild(list);
+    dialogModalContainer.appendChild(buttonContainer);
+  }
 }
 
 function getSubjectOptions() {
   const subjects = SubjectData.getSubjects();
-  if (subjects.length != 0) {
+  if (subjects.length != 0) { 
     subjects.forEach((subject) => {
       const option = document.createElement("div");
       option.classList = "option";
@@ -131,11 +148,17 @@ function modalSubmitController(day) {
     });
 
     ScheduleData.addData(day, subjects);
+    resetModal();
     dialogModal.close();
   } else {
     list.style.color = "red";
     list.innerText = "Please select subjects";
   }
+}
+
+function resetModal() {
+  const list = dialogModal.querySelector(".list");
+  list.innerHTML = '';
 }
 
 function updateSubjectList(day, index) {

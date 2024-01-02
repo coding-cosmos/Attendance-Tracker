@@ -332,18 +332,23 @@ dialog::backdrop {
 }
 
 .dialog button {
-    justify-self: self-end;
-
     width: fit-content;
     background-color: var(--bg-clr-cmpnt);
     border: none;
     border-radius: var(--border-radius);
 
     padding: 6px 12px;
-    margin-right: 36px;
+    /* margin-right: 36px; */
 
     color: white;
     font-size: 1rem;
+}
+
+.dialog .btn-container{
+    /* justify-self: center;  */
+    display: flex;
+    justify-content: space-around;
+
 }
 
 #schedule-page .message {
