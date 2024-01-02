@@ -115,7 +115,6 @@ function getSubjectOptions() {
             "data-day"
           );
 
-        console.log(day);
          const storedSubjects = [];
          ScheduleData.getDaySchedule(day).forEach((subject) =>
            storedSubjects.push(subject.name)
@@ -123,7 +122,7 @@ function getSubjectOptions() {
 
         if (!storedSubjects.includes(option.innerText)) {
           list.style.color = "black";
-          list.innerText = "";
+          list.innerHTML = list.innerText == 'already selected' ? "" : list.innerHTML;
           list.appendChild(SubjectTile(option.innerText, id));
         } else {
           list.style.color = 'red';
@@ -150,7 +149,7 @@ function rederOptions() {
   const optionsContainer = dialogModal.querySelector(".options");
 
   subjectOptionsList.forEach((option) => {
-    optionsContainer.appendChild(option);
+    optionsContainer.append(option);
   });
 }
 
