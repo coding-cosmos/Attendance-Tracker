@@ -23,7 +23,6 @@ function SchedulePageController() {
   dropDownController();
   addSubjectController();
   modalController();
-  getSubjectOptions();
 }
 
 function dropDownController() {
@@ -85,6 +84,7 @@ function modalController() {
     modalCancelBtn.innerText = "Cancel";
 
     modalCancelBtn.addEventListener('click', () => {
+      resetModal();
       dialogModal.close();
     })
 
@@ -203,4 +203,4 @@ function removeSubjectController(day, index) {
   });
 }
 
-export default SchedulePageController;
+export { SchedulePageController ,getSubjectOptions};
