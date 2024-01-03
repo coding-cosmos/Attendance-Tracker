@@ -1,13 +1,15 @@
 import {getDate,getDay} from "./Data/date";
-import ScheduleData from "./Data/scheduleData";
 import Attendance from "./components/attendance";
+import TodayData from "./Data/todayData";
 
 const subjectsWrapper = document.querySelector('.subjects-wrapper');
 const homePage = document.querySelector('#home-page');
 
 function HomePageController() {
     dateController();
+    TodayData.setLocalStorage();
     renderSubjects();
+    attendanceController();
 }
 
 function dateController() {
@@ -18,11 +20,36 @@ function dateController() {
 }
 
 function renderSubjects() {
-    const subjects = ScheduleData.getDaySchedule(getDay());
+    const attendance = TodayData.attendance;
+    console.log(attendance);
     subjectsWrapper.innerHTML = '';
-    subjects.forEach(subject => {
-        subjectsWrapper.appendChild(Attendance(subject.name,'Select'));
+    attendance.forEach(attendance => {
+        const attendanceView = Attendance(
+            attendance.subject.name,
+            attendance.status
+        );
+        console.log(attendance);
+        attendanceView.setAttribute('data-ID', attendance.subject.id);
+        subjectsWrapper.appendChild(attendanceView);
     });
 }
 
+function attendanceController() {
+    const options = document.querySelectorAll('.selector-option');
+    options.forEach(option => {
+        option.addEventListener('click', (e) => {
+            const status = e.target.innerText;
+            const subject =
+                e.target.parentElement.parentElement.parentElement.parentElement;
+            const subjectID = subject.getAttribute('data-ID');
+            const subjectName = subject.querySelector('.sub-name').innerText;
+            TodayData.addAttendance({
+                name: subjectName,
+                id: subjectID
+            }, status);
+            console.log(status,subjectID,subjectName);
+        });
+    });
+}
+    
 export default HomePageController;
