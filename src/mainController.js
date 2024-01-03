@@ -1,5 +1,5 @@
 import HomePageController from "./homePageController";
-import SchedulePageController from "./schedulePageController";
+import {SchedulePageController,getSubjectOptions} from "./schedulePageController";
 import SubjectPageController from "./subjectPageController";
 
 class MainController {
@@ -11,13 +11,11 @@ class MainController {
         page.style.display = 'flex';
 
         switch (pageID) {
-            case 'home-page': HomePageController();
-                break;
-            case 'subjects-page':
-                SubjectPageController();
-                break;
             case 'schedule-page':
-                SchedulePageController();
+                 getSubjectOptions();
+                break;
+            case 'home-page':
+                 HomePageController();
                 break;
         }
     }
