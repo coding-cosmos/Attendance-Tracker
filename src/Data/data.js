@@ -16,6 +16,9 @@ function Data() {
           { day: "fri", subjects: [] },
         ])
       );
+
+      localStorage.setItem('today', JSON.stringify('Jan 02, 2024'));
+      localStorage.setItem('todayReport', JSON.stringify(''));
   }
 }
 
