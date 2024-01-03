@@ -5,7 +5,7 @@ import TodayData from "./Data/todayData";
 const subjectsWrapper = document.querySelector('.subjects-wrapper');
 const homePage = document.querySelector('#home-page');
 
-function HomePageController() {
+function TodayPageController() {
     dateController();
     TodayData.setLocalStorage();
     renderSubjects();
@@ -52,4 +52,4 @@ function attendanceController() {
     });
 }
     
-export default HomePageController;
+export default TodayPageController;

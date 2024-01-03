@@ -2,7 +2,7 @@ import { MenuController } from "./menuController";
 import StarterController from "./starterController";
 import "./styles/style.css";
 import Data from "./Data/data";
-import HomePageController from "./homePageController";
+import TodayPageController from "./todayPageController";
 import {SchedulePageController} from "./schedulePageController";
 import SubjectPageController from "./subjectPageController";
 
@@ -11,4 +11,4 @@ StarterController();
 MenuController();
 SubjectPageController();
 SchedulePageController();
-HomePageController();
+TodayPageController();
