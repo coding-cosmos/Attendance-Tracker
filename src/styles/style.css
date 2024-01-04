@@ -482,13 +482,19 @@ dialog::backdrop {
     height: 100%;
 }
 #extraclass-page .extraclass-pg-wrapper{
-   border: 2px solid red;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+}
+#extraclass-page .sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
 }
 
 @keyframes slide {
