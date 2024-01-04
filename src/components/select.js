@@ -2,7 +2,7 @@ import "../styles/select.css";
 import up from "../icons/up.svg";
 import down from "../icons/down.svg";
 
-function Select() {
+function Select(close) {
   const selectDiv = document.createElement("div");
   selectDiv.classList = "select";
   const selectInput = document.createElement("div");
@@ -26,7 +26,11 @@ function Select() {
 
   icon.addEventListener("click", dropDown);
   nameDiv.addEventListener("click", dropDown);
-  options.addEventListener('click', dropDown);
+
+  if (close) {
+     options.addEventListener("click", dropDown);
+  }
+ 
 
   selectInput.appendChild(nameDiv);
   selectInput.appendChild(icon);
