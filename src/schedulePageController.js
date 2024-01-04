@@ -60,7 +60,7 @@ function addSubjectController() {
 
 function modalController() {
   if (dialogModalContainer.innerHTML == "") {
-     dialogModalContainer.appendChild(Select());
+     dialogModalContainer.appendChild(Select(false));
 
      const list = document.createElement("div");
     list.className = "list";
