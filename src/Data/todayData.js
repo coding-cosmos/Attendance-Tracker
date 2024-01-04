@@ -1,4 +1,5 @@
 import { getDate,getDay } from "./date";
+import ReportData from "./reportData";
 import ScheduleData from "./scheduleData";
 
 class TodayData{
@@ -15,9 +16,13 @@ class TodayData{
         }
     }
 
-    static addAttendance(subject, status) {
-        TodayData.attendance.find(attendance => attendance.subject.name == subject.name).status = status;
-        TodayData.updateLocalStorage();
+  static addAttendance(subject, status) {
+         const prvStatus = TodayData.attendance.find(
+           (attendance) => attendance.subject.name == subject.name
+         );
+         ReportData.updateReport(subject, prvStatus.status, status);
+         prvStatus.status = status;
+         TodayData.updateLocalStorage();
     }
 
     static todayReportData() { 
