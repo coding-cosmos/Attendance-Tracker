@@ -1,6 +1,7 @@
 import HomePageController from "./homePageController";
-import {SchedulePageController,getSubjectOptions} from "./schedulePageController";
-import SubjectPageController from "./subjectPageController";
+import { getSubjectOptions } from "./schedulePageController";
+import TodayPageController from './todayPageController';
+
 
 class MainController {
     static render(tabID) {
@@ -15,7 +16,8 @@ class MainController {
                  getSubjectOptions();
                 break;
             case 'home-page':
-                 HomePageController();
+                HomePageController();
+                TodayPageController();
                 break;
         }
     }
