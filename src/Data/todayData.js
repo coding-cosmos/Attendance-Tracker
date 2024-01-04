@@ -9,6 +9,8 @@ class TodayData{
            TodayData.todayReportData();
         } else {
           localStorage.setItem("today", JSON.stringify(getDate()));
+          localStorage.setItem('extraclass', JSON.stringify([]));
+          localStorage.setItem('todayReport', JSON.stringify(""));
           TodayData.todayReportData();        
         }
     }
