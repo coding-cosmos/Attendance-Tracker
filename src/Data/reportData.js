@@ -26,7 +26,55 @@ class ReportData{
         }
     }
 
-    static updateReport(subject,status) {
+    static updateReport(subject,prvStatus,updatedStatus ) {
+        const data = ReportData.report.find(data => data.subject.id == subject.id);
+
+        if (prvStatus == 'Select') {
+            console.log('new entry');
+            switch (updatedStatus) {
+                case 'Attended':
+                    data.attended++;
+                    data.total++;
+                    break;
+                case 'Bunk':
+                    data.bunk++;
+                    data.total++;
+                    break;
+                case 'Holiday':
+                    data.holiday++;
+                    break;
+            }
+            ReportData.updateLocalStorage();
+        } else {
+            console.log('updated entry');
+            if (!(prvStatus == updatedStatus)) {
+                 switch (updatedStatus) {
+                     case "Attended":
+                         data.attended++;
+                         break;
+                     case "Bunk":
+                         data.bunk++;
+                         break;
+                     case "Holiday":
+                         data.holiday++;
+                         data.total--;
+                         break;
+                 }
+                 switch (prvStatus) {
+                     case "Attended":
+                         data.attended--;
+                         break;
+                     case "Bunk":
+                         data.bunk--;
+                         break;
+                     case "Holiday":
+                         data.holiday--;
+                         data.total++;
+                         break;
+                 }
+                ReportData.updateLocalStorage();
+            }
+        }   
     }
 
     static getData(subject) {
