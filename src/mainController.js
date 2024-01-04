@@ -1,3 +1,4 @@
+import ExtraPageController from "./extraPageController";
 import HomePageController from "./homePageController";
 import { getSubjectOptions } from "./schedulePageController";
 import TodayPageController from './todayPageController';
@@ -19,6 +20,8 @@ class MainController {
                 HomePageController();
                 TodayPageController();
                 break;
+            case 'extraclass-page':
+                ExtraPageController();  
         }
     }
     static clearScreen() {
