@@ -1,10 +1,12 @@
 import SubjectData from "./Data/subjectData";
 import SubjectTile from "./components/subjectTile";
+import MainController from "./mainController";
 
 const subjectAdder = document.querySelector(".sub-pg-wrapper .add");
 const subjectList = document.querySelector(".sub-pg-wrapper .subject-list");
 const message = subjectList.querySelector("p");
 const input = subjectAdder.querySelector("input");
+const link = document.querySelector('span#link');
 
 function addSubject() {
   const subjectName = input.value;
@@ -65,6 +67,12 @@ function SubjectPageController() {
   });
 
   renderSubjects();
+  linkController();
 }
 
+function linkController() {
+  link.addEventListener('click', () => {
+    MainController.render('schedule');
+  })
+}
 export default SubjectPageController;
