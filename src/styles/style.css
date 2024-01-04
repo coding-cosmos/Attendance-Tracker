@@ -76,7 +76,7 @@
     font-weight: bold;
     letter-spacing: .05em;
 
-    z-index: 2;
+    z-index: 3;
     display: none;
 }
 
@@ -478,6 +478,17 @@ dialog::backdrop {
 }
 #extraclass-page {
     display: none;
+    width: 100%;
+    height: 100%;
+}
+#extraclass-page .extraclass-pg-wrapper{
+   border: 2px solid red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 @keyframes slide {
