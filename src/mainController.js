@@ -1,5 +1,6 @@
 import ExtraPageController from "./extraPageController";
 import HomePageController from "./homePageController";
+import ReportPageController from "./reportPageController";
 import { getSubjectOptions } from "./schedulePageController";
 import TodayPageController from './todayPageController';
 
@@ -19,6 +20,7 @@ class MainController {
             case 'home-page':
                 HomePageController();
                 TodayPageController();
+                ReportPageController();
                 break;
             case 'extraclass-page':
                 ExtraPageController();  
