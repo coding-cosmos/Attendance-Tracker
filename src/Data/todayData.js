@@ -6,13 +6,10 @@ class TodayData{
     static attendance = [];
     static setLocalStorage() {
         if (JSON.parse(localStorage.getItem("today")) == getDate()) {
-            console.log("today..");
            TodayData.todayReportData();
         } else {
-          console.log("today data");
           localStorage.setItem("today", JSON.stringify(getDate()));
-            TodayData.todayReportData();
-            
+          TodayData.todayReportData();        
         }
     }
 
@@ -26,10 +23,8 @@ class TodayData{
     }
 
     static todayReportData() { 
-        console.log(JSON.parse(localStorage.getItem('todayReport'))== " ");
         if (JSON.parse(localStorage.getItem("todayReport")) == "") {
           const subjects = ScheduleData.getDaySchedule(getDay());
-          console.log(subjects);
           subjects.forEach((subject) => {
             TodayData.attendance.push({ subject, status: "Select" });
           });

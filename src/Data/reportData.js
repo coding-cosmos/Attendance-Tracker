@@ -8,7 +8,6 @@ class ReportData{
         return ReportData.report;
     }
     static setReport() {
-        console.log(JSON.parse(localStorage.getItem("report")) == "");
         if (JSON.parse(localStorage.getItem('report')) == '') {
             SubjectData.getSubjects().forEach((subject) => {
               ReportData.report.push({

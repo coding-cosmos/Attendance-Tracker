@@ -21,14 +21,12 @@ function dateController() {
 
 function renderSubjects() {
     const attendance = TodayData.attendance;
-    console.log(attendance);
     subjectsWrapper.innerHTML = '';
     attendance.forEach(attendance => {
         const attendanceView = Attendance(
             attendance.subject.name,
             attendance.status
         );
-        console.log(attendance);
         attendanceView.setAttribute('data-ID', attendance.subject.id);
         subjectsWrapper.appendChild(attendanceView);
     });
@@ -47,7 +45,6 @@ function attendanceController() {
                 name: subjectName,
                 id: subjectID
             }, status);
-            console.log(status,subjectID,subjectName);
         });
     });
 }

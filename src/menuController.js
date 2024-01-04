@@ -33,7 +33,6 @@ function activePageController() {
   pages.forEach((page) => {
     page.addEventListener("click", () => {
       setActive(page);
-      console.log(page.id);
       MainController.render(page.id);
       closeMenu();
     });

@@ -6,7 +6,6 @@ function ReportPageController() {
     const reportContent = homePage.querySelector('.table-content');
     ReportData.setReport();
     renderSubjects(reportContent);
-    console.log(reportContent);
 } 
 function renderSubjects(reportContent) {
     reportContent.innerHTML = '';

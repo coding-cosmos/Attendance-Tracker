@@ -8,7 +8,6 @@ function HomePageController() {
     const today = homePageWrapper.querySelector('.today');
     const report = homePageWrapper.querySelector('.report');
     nav.addEventListener('click', (e) => {
-        console.log(e.target);
         nav.querySelectorAll('.nav-item').forEach(item => {
             item.classList = 'nav-item';
         });
