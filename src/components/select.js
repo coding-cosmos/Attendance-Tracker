@@ -26,6 +26,7 @@ function Select() {
 
   icon.addEventListener("click", dropDown);
   nameDiv.addEventListener("click", dropDown);
+  options.addEventListener('click', dropDown);
 
   selectInput.appendChild(nameDiv);
   selectInput.appendChild(icon);
