@@ -57,6 +57,7 @@ function menuIconController() {
 }
 
 function setPageIcons() {
+  iconImg.src = hamburger;
   pages.forEach((page, index) => {
     page.querySelector('.icon>img').src = Icons[index];
   });
