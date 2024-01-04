@@ -31,7 +31,6 @@ function Attendance(name,status) {
   options.forEach((option) =>
     option.addEventListener("click", () => {
       value.innerText = option.innerText;
-      console.log(option.innerText);
       close(div);
     })
   );
