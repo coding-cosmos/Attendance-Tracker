@@ -9,7 +9,7 @@
     "watch": "webpack --watch --config webpack.dev.js",
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "publish":  "git subtree push --prefix dist origin gh-pages"
+    "publish": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.6.0",
     "merge": "^2.1.1",
+    "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.3",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
