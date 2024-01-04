@@ -426,10 +426,10 @@ dialog::backdrop {
 }
 
 #home-page .today{
-    display: none;
+    display: flex;
 }
 #home-page .report{
-    display: flex;
+    display: none;
 }
 #home-page .report-container{
     width:100%;
