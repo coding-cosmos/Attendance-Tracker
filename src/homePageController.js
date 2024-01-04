@@ -1,3 +1,6 @@
+import TodayPageController from './todayPageController';
+import ReportPageController from './reportPageController';
+
 function HomePageController() {
     const homePage = document.querySelector('#home-page');
     const homePageWrapper = homePage.querySelector('.home-pg-wrapper');
@@ -15,9 +18,11 @@ function HomePageController() {
        if (e.target.id == 'today') {
            today.style.display = 'flex';
            report.style.display = 'none';
+           TodayPageController();
        } else {
            today.style.display = "none";
            report.style.display = "flex";
+           ReportPageController();
        }
     });
 }
