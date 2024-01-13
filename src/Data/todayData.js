@@ -27,7 +27,7 @@ class TodayData{
     static todayReportData() { 
         if (JSON.parse(localStorage.getItem("todayReport")) == "") {
           const subjects = ScheduleData.getDaySchedule(getDay());
-          subjects.forEach((subject) => {
+          subjects?.forEach((subject) => {
             TodayData.attendance.push({ subject, status: "Select" });
           });
           TodayData.updateLocalStorage();
