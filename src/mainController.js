@@ -2,6 +2,7 @@ import ExtraPageController from "./extraPageController";
 import HomePageController from "./homePageController";
 import ReportPageController from "./reportPageController";
 import { getSubjectOptions } from "./schedulePageController";
+import SettingsController from "./settingsPageController";
 import TodayPageController from './todayPageController';
 
 
@@ -24,6 +25,8 @@ class MainController {
                 break;
             case 'extraclass-page':
                 ExtraPageController();  
+            case 'settings-page':
+                SettingsController();
         }
     }
     static clearScreen() {
