@@ -504,6 +504,38 @@ dialog::backdrop {
     width: 100%;
 }
 
+#settings-page{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#settings-page .settings-pg-wrapper{
+    margin: 48px;
+    padding: 16px;
+    background-color: white;
+    width: 80vw;
+    border-radius: 24px;
+}
+
+#settings-page .setting{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#settings-page .reset>button{
+    padding: 8px 16px;
+    border: none;
+    background-color: var(--bg-clr-primary);
+    color: white;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+}
+#settings-page .reset>button:active{
+   background-color: var(--bg-clr-secondary);
+}
 @keyframes slide {
     0% {
         transform: translateX(-50vw);
